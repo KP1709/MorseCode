@@ -17,7 +17,7 @@ def letterInMorse(string):
                        "y":"-O--", "z":"--OO", " ":" "}                   # Whitespace included to avoid errors using multiple words
     
     # Goes through each letter in string to convert
-    global conversion                                                     # Creating a global variable (used in SoundInMorse)
+    global conversion                                                     # Creating a global variable (used in morseInSound)
     conversion = ""
     for letter in string:
         x = morseLetterDict.get(letter)
