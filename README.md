@@ -5,4 +5,8 @@ The conversion into visual morse code is then used to translate it into sound us
 
 ## Commits:
 1. Working program in Python converting into morse code and plays correct sound. - 27/11/2021  
-2.  
+
+## To-do:
+🔨 Create a GUI to encase code    
+🔨 Create feature converting morse code back into plain English  
+🔨 (More ideas in the making 🚀)  
