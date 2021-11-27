@@ -3,10 +3,10 @@
 This project is about creating a morse code translator which takes an input of plain English and converts it visually in morse code.  
 The conversion into visual morse code is then used to translate it into sound using the system bell.    
 
-## Commits:
+## 🥊 Commits:
 1. Working program in Python converting into morse code and plays correct sound. - 27/11/2021  
 
-## To-do:
+## 🚀 To-do:
 🔨 Create a GUI to encase code    
 🔨 Create feature converting morse code back into plain English  
-🔨 (More ideas in the making 🚀)  
+🔨 (More ideas in the making)  
