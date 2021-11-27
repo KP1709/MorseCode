@@ -14,7 +14,7 @@ def letterInMorse(string):
                        "p":"O--O", "q":"--O-", "r":"O-O",
                        "s":"OOO", "t":"-", "u":"OO-",
                        "v":"OOO-", "w":"O--", "x":"-OO-",
-                       "y":"-O--", "z":"--OO"}
+                       "y":"-O--", "z":"--OO", " ":" "}                   # Whitespace included to avoid errors using multiple words
     
     # Goes through each letter in string to convert
     global conversion                                                     # Creating a global variable (used in SoundInMorse)
@@ -33,8 +33,10 @@ def morseInSound(conversion):
             winsound.Beep(500,100)                                        # Uses system bell at set frequency and duration (depending on char)
         elif char == "-":
             winsound.Beep(500,300)
-        else:
+        elif char == " ":
             time.sleep(2)                                                 # Whitespace shown by pause (sleep) 
+        else:
+            time.sleep(2)
     
 string = str.lower(input("Enter a string to convert to morse: "))
 letterInMorse(string)
