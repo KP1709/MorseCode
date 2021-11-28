@@ -37,7 +37,12 @@ def morseInSound(conversion):
             time.sleep(2)                                                 # Whitespace shown by pause (sleep) 
         else:
             time.sleep(2)
-    
-string = str.lower(input("Enter a string to convert to morse: "))
-letterInMorse(string)
-morseInSound(conversion)
+
+while True:                                                               # Continuous execution of program until vaild string output (break)
+    try:
+        string = str.lower(input("Enter a string to convert to morse: "))
+        letterInMorse(string)
+        morseInSound(conversion)
+        break
+    except TypeError:                                                     # Catching error and handling it using try and accept
+        print("You cannot use special characters or numbers")
