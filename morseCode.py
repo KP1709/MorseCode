@@ -34,7 +34,7 @@ def morseInSound(conversion):
         elif char == "-":
             winsound.Beep(500,300)
         elif char == " ":
-            time.sleep(2)                                                 # Whitespace shown by pause (sleep) 
+            time.sleep(3)                                                 # Whitespace shown by pause (sleep) 
         else:
             time.sleep(2)
 
