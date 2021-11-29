@@ -5,7 +5,7 @@ The conversion into visual morse code is then used to translate it into sound us
 
 ## 🥊 Main Commits:
 1. Working program in Python converting into morse code and plays correct sound. - 27/11/2021  
-2. Adding whitespace as key and value in dictionary. Allowing multiple words to be converted. - 27/11/2021  
+2. Adding whitespace as key and value in dictionary. Allowing multiple words to be converted with spaces. - 27/11/2021  
 3. Error handling included for numbers and special characters. - 28/11/2021  
 
 ## 🚀 To-do:
