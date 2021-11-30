@@ -11,4 +11,4 @@ The conversion into visual morse code is then used to translate it into sound us
 ## 🚀 To-do:
 🔨 Create a GUI to encase code    
 🔨 Create feature converting morse code back into plain English  
-🔨 (More ideas in the making)  
+🔨 Swap system bell to audio file so it can be played on different audio devices.   
