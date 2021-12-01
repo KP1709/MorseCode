@@ -20,5 +20,5 @@ Cross - not considering change
 ## 🚀 To-do:
 🔨 Create a GUI to encase code    
 🔨 Create feature converting morse code back into plain English  
-🔨 Swap system bell to audio file so it can be played on different audio devices. 
+🔨 Swap system bell to audio file so it can be played on different audio devices.   
 🔨 Take user input and validate it to be in lowercase to be read by dictionary.  
