@@ -14,13 +14,13 @@ def letterInMorse(string):
                        "p":"O--O", "q":"--O-", "r":"O-O",
                        "s":"OOO", "t":"-", "u":"OO-",
                        "v":"OOO-", "w":"O--", "x":"-OO-",
-                       "y":"-O--", "z":"--OO", " ":" "}                   # Whitespace included to avoid errors using multiple words
+                       "y":"-O--", "z":"--OO", " ":"      "}              # Large whitespace to differentiate spaces between words and letters
     
     # Goes through each letter in string to convert
     global conversion                                                     # Creating a global variable (used in morseInSound)
     conversion = ""
     for letter in string:
-        x = morseLetterDict.get(letter)
+        x = morseLetterDict.get(letter.lower())                           # Validating text to be in lowercase to be read by dictionary
         conversion = conversion + "|" + x                                 #'|' - characters are readable and concatenate
     return conversion
 
