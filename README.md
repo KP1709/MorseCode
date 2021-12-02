@@ -14,7 +14,8 @@ The conversion into visual morse code is then used to translate it into sound us
 Tick - change is done  
 Q-mark - considering change  
 Cross - not considering change  
-1. Removing the sounding of system bell as it cannot be heard through external speakers. ✔️  
+1. Removing the sounding of system bell as it cannot be heard through external speakers. ❌  
+    This was going to be done however the audio file cannot be played for long enough for it to be heard.
 2. Adding the instructions and program together on one page than seperate. ❓    
 
 ## 🚀 To-do:
