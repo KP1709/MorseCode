@@ -1,4 +1,4 @@
-# Morse Code Program with GUI - 03/12/2021 - Kareena Patel
+# Morse Code Program with GUI - 30/12/2021 - Kareena Patel
 
 from tkinter import *
 import tkinter as tk
