@@ -16,12 +16,12 @@ Tick - change is done
 Q-mark - considering change  
 Cross - not considering change  
 1. Removing the sounding of system bell as it cannot be heard through external speakers. ❌  
-    This was going to be done however the audio file cannot be played for long enough for it to be heard.
+   - This was going to be done however the audio file cannot be played for long enough for it to be heard.
+   - Other methods include importing pygame.  
 2. Adding the instructions and program together on one page than seperate. ✔️  
 3. Taken user input and validated it to be in lowercase so it is read by dictionary. ✔️     
 
-## 🚀 To-do:
-🔨 Create a GUI to encase code    
+## 🚀 To-do:   
 🔨 Create feature converting morse code back into plain English  
-🔨 Swap system bell to audio file so it can be played on different audio devices.   
+🔨 Swap system bell to audio file so it can be played on different audio devices.  
  
