@@ -1,55 +1,101 @@
+# Morse Code Program with GUI - 03/12/2021 - Kareena Patel
+from tkinter import *
 import tkinter as tk
+import time
+import winsound
 
 window = tk.Tk()
 window.title("Morse code translator")
-window.geometry("600x500")
+window.geometry("600x650")
 window.resizable(0,0)
 
-def next():
-    window.destroy()
-    import page2
+def letterInMorse(string):
+    morseLetterDict = {"a":" .-", "b":"-...", "c":"-.-.",                 # Created dictionary to store letters in visual morse code
+                       "d":"-..", "e":".", "f":"..-.",
+                       "g":"--.", "h":"....", "i":"..",
+                       "j":".---", "k":"-.-", "l":".-..",
+                       "m":"--", "n":"-.", "o":"---",
+                       "p":".--.", "q":"--.-", "r":".-.",
+                       "s":"...", "t":"-", "u":"..-",
+                       "v":"...-", "w":".--", "x":"-..-",
+                       "y":"-.--", "z":"--..", " ":"    "}
 
-frame1 = tk.Frame(master=window,padx=30, pady=30)
-frame1.pack(padx=10, pady = 5)
-label1 = tk.Label(
-    master = frame1,
+    global conversion                                                     # Creating a global variable (used in SoundInMorse)
+    conversion = ""
+    for letter in string:
+        x = morseLetterDict.get(letter.lower())
+        value = conversion + "|" + x                                      #'|' - characters are readable and concatenate
+        conversion = value.replace("|", "  ")                             # Changes '|' into spaces for conversion
+    return conversion
+
+def morseInSound(conversion):
+    for char in conversion:
+        if char == ".":
+            winsound.Beep(500,100)                                       
+        elif char == "-":
+            winsound.Beep(500,300)
+        elif char == " ":
+            time.sleep(3)                                                 # Whitespace shown by pause (sleep) 
+        else:
+            time.sleep(2)
+
+def getTranslation(conversion):
+    string = plainTextBox.get("1.0","end-1c")                             # 'end-1c' removes extra line
+    global morseText
+    morseText = letterInMorse(string)                              
+    morseLabel.config(text = morseText)                                   # Updates text to output in label               
+    return morseText
+
+def playTranslation(conversion):
+    print("pressed")
+
+heading = tk.Label(
+    window,
     text = "Morse code translator",
     fg = "blue",
-    width = 75,
+    width = 30,
     height = 1,
-    font = ("Arial",25))
+    font = ("Arial",20))
+heading.grid(padx=10, pady=20)
 
-label1.place(x=300, y=0)
-label1.pack()
-
-frame2 = tk.Frame(master=window,padx = 30, pady = 30)
-frame2.pack()
-label2 = tk.Label(
-    master = frame2,
+instructions = tk.Label(
+    master = window,
     text = "Instructions:\n"
-            "Type what you want to be converted into Morse code.\n"
+            "Type what you want to be converted into Morse code.\n"                   
             "Press 'convert' to convert the text.\n"
             "Press 'hear' to hear the Morse code.\n",
     fg = "black",
-    width = 75,
+    width = 40,
     height = 5,
-    font = ("Arial",14))
+    font = ("Arial",12))
+instructions.grid(padx=10, pady=5)
 
-label2.place(x=300, y=100)
-label2.pack()
+plainTextBox = tk.Text(
+    window,
+    width = 72,
+    height = 10 )
+plainTextBox.grid(padx = 10, pady= 10)
 
-frame3 = tk.Frame(master=window)
-frame3.pack()
-nextButton = tk.Button(
-    master = frame3,
-    text = "Next",
-    width = 25,
-    height = 5,
-    bg = "#99ccff",
-    command = lambda:next(),
-    font = ("Arial",14))
+submitButton = tk.Button(window,
+    width = 73, 
+    height = 2, 
+    text = "Submit", 
+    bg= "#99ccff")
+submitButton.grid(padx = 10, pady = 10)
+submitButton.bind("<Button-1>", getTranslation)                               # Button links to function called getTranslation for event
 
-nextButton.place(x=300, y=600)
-nextButton.pack()
+morseLabel = tk.Label(window, 
+    text = "", 
+    wraplength= 500, 
+    font =("Arial",20))                                                          
+morseLabel.grid(padx = 10, pady = 20)
 
-window.mainloop()
+hearButton = tk.Button(window, 
+    width = 73, 
+    height = 2, 
+    text = "Listen to the translation", 
+    bg = "#99ccff")
+hearButton.grid(padx = 20, pady= 20)
+hearButton.bind("<Button-1>", playTranslation)
+
+window.mainloop()  
