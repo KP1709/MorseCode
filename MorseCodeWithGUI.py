@@ -1,4 +1,5 @@
-# Morse Code Program with GUI - 1/12/2021 - Kareena Patel
+# Morse Code Program with GUI - 03/12/2021 - Kareena Patel
+
 from tkinter import *
 import tkinter as tk
 import time
@@ -42,12 +43,16 @@ def morseInSound(conversion):
 def getTranslation(conversion):
     string = plainTextBox.get("1.0","end-1c")                             # 'end-1c' removes extra line
     global morseText
-    morseText = letterInMorse(string)                              
-    morseLabel.config(text = morseText)                                   # Updates text to output in label               
-    return morseText
+    morseText = letterInMorse(string) 
+    morseTextBox.config(state = "normal")                                 # Opens text box for editing
+    morseTextBox.delete(1.0,END)                                          # Removes text in box  
+    morseTextBox.insert(1.0,morseText)                                    # Inserts conversion into textbox
+    morseTextBox.config(state = "disabled")                               # Updates text to output in text box             
+    return morseText                                                      # Disables editing so user cannot type in box
 
 def playTranslation(conversion):
     print("pressed")
+    # Plays morse sound
 
 heading = tk.Label(
     window,
@@ -56,7 +61,7 @@ heading = tk.Label(
     width = 30,
     height = 1,
     font = ("Arial",20))
-heading.grid(padx=10, pady=20)
+heading.grid(padx=10, pady=5)
 
 instructions = tk.Label(
     master = window,
@@ -74,7 +79,7 @@ plainTextBox = tk.Text(
     window,
     width = 72,
     height = 10 )
-plainTextBox.grid(padx = 10, pady= 10)
+plainTextBox.grid(padx = 10, pady= 5)
 
 submitButton = tk.Button(window,
     width = 73, 
@@ -82,13 +87,13 @@ submitButton = tk.Button(window,
     text = "Submit", 
     bg= "#99ccff")
 submitButton.grid(padx = 10, pady = 10)
-submitButton.bind("<Button-1>", getTranslation)                               # Button links to function called getTranslation for event
+submitButton.bind("<Button-1>", getTranslation)                          # Button links to function called getTranslation for event
 
-morseLabel = tk.Label(window, 
-    text = "", 
-    wraplength= 500, 
-    font =("Arial",20))                                                          
-morseLabel.grid(padx = 10, pady = 20)
+morseTextBox = tk.Text(
+    window,
+    width = 72,
+    height = 10)
+morseTextBox.grid(padx=10, pady=10)
 
 hearButton = tk.Button(window, 
     width = 73, 
@@ -98,4 +103,4 @@ hearButton = tk.Button(window,
 hearButton.grid(padx = 20, pady= 20)
 hearButton.bind("<Button-1>", playTranslation)
 
-window.mainloop()  
+window.mainloop()                                                                
