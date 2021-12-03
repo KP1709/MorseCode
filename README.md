@@ -18,8 +18,13 @@ Cross - not considering change
 1. Removing the sounding of system bell as it cannot be heard through external speakers. ❌  
    - This was going to be done however the audio file cannot be played for long enough for it to be heard.
    - Other methods include importing pygame.  
-2. Adding the instructions and program together on one page than seperate. ✔️  
-3. Taken user input and validated it to be in lowercase so it is read by dictionary. ✔️     
+2. Adding the instructions and program together on one page than seperate. ✔️
+   - Easier to run and use  
+3. Taken user input and validated it to be in lowercase so it is read by dictionary. ✔️
+   - Without this typing uppercase letters causes an error  
+4. Instead of printing morse conversion to label, print it to a non-editable textbox. ✔️
+   - Printing morse to label causes window to grow and hide other buttons. 
+   - Printing to a textbox keeps the text a reasonable size and in one space without affecting the window size       
 
 ## 🚀 To-do:   
 🔨 Create feature converting morse code back into plain English  
