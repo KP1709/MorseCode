@@ -27,7 +27,7 @@ Cross - not considering change
    - Printing morse to label causes window to grow and hide other buttons. 
    - Printing to a textbox keeps the text a reasonable size and in one space without affecting the window size       
 
-## 🚀 To-do:   
-🔨 Create feature converting morse code back into plain English  
-🔨 Swap system bell to audio file so it can be played on different audio devices.  
+## 🔨 To-do:   
+1. Create feature converting morse code back into plain English  
+2. Swap system bell to audio file so it can be played on different audio devices.  
  
