@@ -9,6 +9,7 @@ The conversion into visual morse code is then used to translate it into sound us
 3. Error handling included for numbers and special characters. - 28/11/2021  
 4. Buidling the first page to appear in GUI (containing instructions and a button for the next page). - 30/11/2021  
 5. Building the second page which is the main program. - 1/12/2021
+6. Merged both the first and second page of the GUI so instructions and program on one page. - 3/12/2021  
 
 ## 🔄 Changes:
 Tick - change is done  
@@ -16,7 +17,7 @@ Q-mark - considering change
 Cross - not considering change  
 1. Removing the sounding of system bell as it cannot be heard through external speakers. ❌  
     This was going to be done however the audio file cannot be played for long enough for it to be heard.
-2. Adding the instructions and program together on one page than seperate. ❓    
+2. Adding the instructions and program together on one page than seperate. ✔️    
 
 ## 🚀 To-do:
 🔨 Create a GUI to encase code    
