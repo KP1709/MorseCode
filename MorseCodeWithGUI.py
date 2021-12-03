@@ -78,7 +78,8 @@ instructions.grid(padx=10, pady=5)
 plainTextBox = tk.Text(
     window,
     width = 72,
-    height = 10 )
+    height = 10,
+    wrap = WORD)
 plainTextBox.grid(padx = 10, pady= 5)
 
 submitButton = tk.Button(window,
@@ -92,7 +93,8 @@ submitButton.bind("<Button-1>", getTranslation)                          # Butto
 morseTextBox = tk.Text(
     window,
     width = 72,
-    height = 10)
+    height = 10,
+    wrap = WORD)                                                         # Wraps text so it is readable to user
 morseTextBox.grid(padx=10, pady=10)
 
 hearButton = tk.Button(window, 
