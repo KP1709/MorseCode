@@ -1,4 +1,4 @@
-# Morse Code Program with GUI - 30/12/2021 - Kareena Patel
+# Morse Code Program with GUI - 03/12/2021 - Kareena Patel
 
 from tkinter import *
 import tkinter as tk
@@ -19,7 +19,7 @@ def letterInMorse(string):
                        "p":".--.", "q":"--.-", "r":".-.",
                        "s":"...", "t":"-", "u":"..-",
                        "v":"...-", "w":".--", "x":"-..-",
-                       "y":"-.--", "z":"--..", " ":"    "}
+                       "y":"-.--", "z":"--..", " ":"   "}
 
     global conversion                                                     # Creating a global variable (used in SoundInMorse)
     conversion = ""
@@ -28,17 +28,6 @@ def letterInMorse(string):
         value = conversion + "|" + x                                      #'|' - characters are readable and concatenate
         conversion = value.replace("|", "  ")                             # Changes '|' into spaces for conversion
     return conversion
-
-def morseInSound(conversion):
-    for char in conversion:
-        if char == ".":
-            winsound.Beep(500,100)                                       
-        elif char == "-":
-            winsound.Beep(500,300)
-        elif char == " ":
-            time.sleep(3)                                                 # Whitespace shown by pause (sleep) 
-        else:
-            time.sleep(2)
 
 def getTranslation(conversion):
     string = plainTextBox.get("1.0","end-1c")                             # 'end-1c' removes extra line
@@ -50,14 +39,22 @@ def getTranslation(conversion):
     morseTextBox.config(state = "disabled")                               # Updates text to output in text box             
     return morseText                                                      # Disables editing so user cannot type in box
 
-def playTranslation(conversion):
-    print("pressed")
-    # Plays morse sound
+def playTranslation(conversion):                                                
+    for char in morseText:                                                # The morse code is stored in var morseText
+        if char == ".":
+            winsound.Beep(500,100)                                        # Plays winsound (problem: freezes GUI - cannot exit midway)
+        elif char == "-":
+            winsound.Beep(500,300)
+        elif char == " ":
+            time.sleep(2)                                                 # Whitespace shown by pause (sleep) 
+        else:
+            time.sleep(3)
+
 
 heading = tk.Label(
     window,
     text = "Morse code translator",
-    fg = "blue",
+    fg = "orange",
     width = 30,
     height = 1,
     font = ("Arial",20))
@@ -68,12 +65,12 @@ instructions = tk.Label(
     text = "Instructions:\n"
             "Type what you want to be converted into Morse code.\n"                   
             "Press 'convert' to convert the text.\n"
-            "Press 'hear' to hear the Morse code.\n",
+            "Press 'Listen to the translation' to hear the Morse code.\n",
     fg = "black",
-    width = 40,
+    width = 45,
     height = 5,
     font = ("Arial",12))
-instructions.grid(padx=10, pady=5)
+instructions.grid(padx=10, pady=10)
 
 plainTextBox = tk.Text(
     window,
@@ -95,6 +92,7 @@ morseTextBox = tk.Text(
     width = 72,
     height = 10,
     wrap = WORD)                                                         # Wraps text so it is readable to user
+morseTextBox.config(state = "disabled")
 morseTextBox.grid(padx=10, pady=10)
 
 hearButton = tk.Button(window, 
@@ -102,7 +100,7 @@ hearButton = tk.Button(window,
     height = 2, 
     text = "Listen to the translation", 
     bg = "#99ccff")
-hearButton.grid(padx = 20, pady= 20)
+hearButton.grid(padx = 20, pady= 10)
 hearButton.bind("<Button-1>", playTranslation)
 
-window.mainloop()                                                                
+window.mainloop()                                                                                                                                
